@@ -11,6 +11,7 @@ ENV PATH /opt/anaconda3/bin:$PATH
 # Specify the version of scanpy to install. https://github.com/theislab/scanpy/issues/1579
 RUN pip install --upgrade pip && pip install scanpy==1.7.0 \
                                              seaborn==0.10.1 \
-                                             leidenalg
+                                             leidenalg \
+                                             louvain==0.7.0
 WORKDIR /work
 CMD ["jupyter", "lab", "--ip=0.0.0.0", "--allow-root", "--LabApp.token=''"]
