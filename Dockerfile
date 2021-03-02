@@ -13,5 +13,9 @@ RUN pip install --upgrade pip && pip install scanpy==1.7.0 \
                                              seaborn==0.10.1 \
                                              leidenalg \
                                              louvain==0.7.0
+# Specify environment variables to ensure reproducibility.
+# https://github.com/theislab/scanpy/issues/1187
+# https://github.com/theislab/scanpy/issues/313
+ENV OMP_NUM_THREADS=1 PYTHONHASHSEED=0
 WORKDIR /work
 CMD ["jupyter", "lab", "--ip=0.0.0.0", "--allow-root", "--LabApp.token=''"]
