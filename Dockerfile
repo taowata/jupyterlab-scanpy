@@ -12,7 +12,9 @@ ENV PATH /opt/anaconda3/bin:$PATH
 RUN pip install --upgrade pip && pip install scanpy==1.7.0 \
                                              seaborn==0.10.1 \
                                              leidenalg \
-                                             louvain==0.7.0
+                                             louvain==0.7.0 \
+                                             bbknn==1.4.0 \
+                                             harmonypy=0.0.5
 # Specify environment variables to ensure reproducibility.
 # https://github.com/theislab/scanpy/issues/1187
 # https://github.com/theislab/scanpy/issues/313
