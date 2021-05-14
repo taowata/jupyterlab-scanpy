@@ -10,12 +10,13 @@ RUN wget https://repo.continuum.io/archive/Anaconda3-2020.11-Linux-x86_64.sh && 
     sh /opt/Anaconda3-2020.11-Linux-x86_64.sh -b -p /opt/anaconda3 && \
     rm -f Anaconda3-2020.11-Linux-x86_64.sh
 ENV PATH /opt/anaconda3/bin:$PATH
-RUN pip install --upgrade pip && pip install scanpy==1.7.0 \
+RUN pip install --upgrade pip && pip install scanpy==1.7.2 \
                                              seaborn==0.10.1 \
                                              leidenalg \
                                              louvain==0.7.0 \
                                              bbknn==1.4.0 \
-                                             harmonypy==0.0.5
+                                             harmonypy==0.0.5 \
+                                             scrublet==0.2.3
 # Specify environment variables to ensure reproducibility.
 # https://github.com/theislab/scanpy/issues/1187
 # https://github.com/theislab/scanpy/issues/313
